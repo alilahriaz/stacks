@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GameView.h
 //  stacks
 //
 //  Created by Ali Riaz on 2016-07-16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GameView : UIView
 
 @end
-
