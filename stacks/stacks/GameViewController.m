@@ -11,6 +11,7 @@
 @interface GameViewController ()
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic, assign) NSInteger tapsDetected;
 
 @end
 
@@ -22,6 +23,16 @@
     
 }
 
+- (IBAction)tapDetected:(id)sender {
+    if (self.tapsDetected == 0) {
+        [self.view startGame];
+    }
+    else {
+        [self.view evaluateScrollPosition];
+        [self.view startGame];
+    }
+    self.tapsDetected ++;
+}
 
 
 @end

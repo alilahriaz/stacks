@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="80" id="kup-kd-lp0"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Being" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Db-FS-d2E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Begin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Db-FS-d2E">
                                 <rect key="frame" x="252" y="289" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,28 +41,30 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Hb3-zz-G9U" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2HZ-Dm-POv"/>
                             <constraint firstItem="5pu-h7-8X0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CwC-bA-x1a"/>
-                            <constraint firstAttribute="trailing" secondItem="5pu-h7-8X0" secondAttribute="trailing" constant="581" id="Lkb-ge-0Z8"/>
                             <constraint firstItem="2Db-FS-d2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fYc-2Z-lMK"/>
                             <constraint firstItem="Hb3-zz-G9U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hY9-Or-47t"/>
                             <constraint firstItem="5pu-h7-8X0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-80" id="mcC-uT-hpV"/>
                             <constraint firstItem="2Db-FS-d2E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yIp-Vj-vOr"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Lkb-ge-0Z8"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="scrollingView" destination="5pu-h7-8X0" id="f4C-Uz-BJy"/>
+                            <outlet property="scrollingViewLeading" destination="mcC-uT-hpV" id="oEo-tG-BnU"/>
                             <outlet property="tapToBeginLabel" destination="2Db-FS-d2E" id="Qfi-jl-2I6"/>
                             <outlet property="targetView" destination="Hb3-zz-G9U" id="YJr-D0-Bpn"/>
+                            <outletCollection property="gestureRecognizers" destination="sdw-Fw-4VB" appends="YES" id="ozL-h8-Cx2"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sdw-Fw-4VB">
+                    <connections>
+                        <action selector="tapDetected:" destination="BYZ-38-t0r" id="CHD-IO-iGf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="442" y="463"/>
         </scene>
