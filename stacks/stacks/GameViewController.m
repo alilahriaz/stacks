@@ -34,5 +34,12 @@
     self.tapsDetected ++;
 }
 
+//resize target on successive tap
+
+//label for score count
+
+//you lose label, end game state
+
+//restart game button and state
 
 @end
