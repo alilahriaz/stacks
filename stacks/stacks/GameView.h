@@ -10,8 +10,8 @@
 
 @interface GameView : UIView
 
-- (void)hideGameLabel;
 - (void)startGame;
 - (void)evaluateScrollPosition;
+- (void)restartScroll;
 
 @end

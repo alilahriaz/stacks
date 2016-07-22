@@ -29,7 +29,7 @@
     }
     else {
         [self.view evaluateScrollPosition];
-        [self.view startGame];
+        [self.view restartScroll];
     }
     self.tapsDetected ++;
 }

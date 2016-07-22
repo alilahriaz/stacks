@@ -16,6 +16,7 @@ NSString *scrollAnimationKey = @"transform.translation.x";
 @property (weak, nonatomic) IBOutlet UILabel *tapToBeginLabel;
 @property (weak, nonatomic) IBOutlet UIView *scrollingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollingViewLeading;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
@@ -27,15 +28,20 @@ NSString *scrollAnimationKey = @"transform.translation.x";
     self.tapToBeginLabel.hidden = NO;
     
     self.targetView.layer.cornerRadius = 4.0f;
+    [self hideScoreLabel];
 }
 
-- (void)hideGameLabel{
-    self.tapToBeginLabel.hidden = YES;
+- (void)hideScoreLabel {
+    self.scoreLabel.text = 0;
+    self.scoreLabel.hidden = YES;
+}
+
+- (void)restartScroll {
+    [self startARound];
 }
 
 - (void)startGame {
     self.tapToBeginLabel.hidden = YES;
-    
     [self startARound];
 }
 

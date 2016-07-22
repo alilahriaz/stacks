@@ -39,18 +39,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxt-fg-cj7" userLabel="Score Label">
+                                <rect key="frame" x="279" y="124" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cVN-H3-Zdx"/>
+                                    <constraint firstAttribute="width" constant="42" id="fh7-vi-qnG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Hb3-zz-G9U" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2HZ-Dm-POv"/>
                             <constraint firstItem="5pu-h7-8X0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CwC-bA-x1a"/>
+                            <constraint firstItem="Xxt-fg-cj7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="Jxc-9J-uTB"/>
+                            <constraint firstItem="Xxt-fg-cj7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cnG-Ed-9Ch"/>
                             <constraint firstItem="2Db-FS-d2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fYc-2Z-lMK"/>
                             <constraint firstItem="Hb3-zz-G9U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hY9-Or-47t"/>
                             <constraint firstItem="5pu-h7-8X0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-80" id="mcC-uT-hpV"/>
                             <constraint firstItem="2Db-FS-d2E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yIp-Vj-vOr"/>
                         </constraints>
                         <connections>
+                            <outlet property="scoreLabel" destination="Xxt-fg-cj7" id="Y85-tI-cRF"/>
                             <outlet property="scrollingView" destination="5pu-h7-8X0" id="f4C-Uz-BJy"/>
                             <outlet property="scrollingViewLeading" destination="mcC-uT-hpV" id="oEo-tG-BnU"/>
                             <outlet property="tapToBeginLabel" destination="2Db-FS-d2E" id="Qfi-jl-2I6"/>
