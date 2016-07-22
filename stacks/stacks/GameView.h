@@ -11,7 +11,8 @@
 @interface GameView : UIView
 
 - (void)startGame;
-- (void)evaluateScrollPosition;
+- (BOOL)evaluateScrollPosition;
 - (void)restartScroll;
+- (void)updateScore:(NSInteger)score;
 
 @end

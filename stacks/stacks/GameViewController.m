@@ -12,26 +12,32 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, assign) NSInteger tapsDetected;
+@property (nonatomic, assign) NSInteger score;
 
 @end
 
 @implementation GameViewController
 @dynamic view;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
 
 - (IBAction)tapDetected:(id)sender {
     if (self.tapsDetected == 0) {
         [self.view startGame];
+        self.score = 0;
     }
     else {
-        [self.view evaluateScrollPosition];
+        BOOL scored = [self.view evaluateScrollPosition];
+        if (scored) {
+            self.score++;
+        }
         [self.view restartScroll];
     }
     self.tapsDetected ++;
+}
+
+- (void)setScore:(NSInteger)score {
+    _score = score;
+    [self.view updateScore:score];
 }
 
 //resize target on successive tap

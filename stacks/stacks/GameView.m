@@ -42,6 +42,7 @@ NSString *scrollAnimationKey = @"transform.translation.x";
 
 - (void)startGame {
     self.tapToBeginLabel.hidden = YES;
+    self.scoreLabel.hidden = NO;
     [self startARound];
 }
 
@@ -56,17 +57,27 @@ NSString *scrollAnimationKey = @"transform.translation.x";
     self.scrollingView.transform = CGAffineTransformMakeTranslation(self.frame.size.width, 0.0f);
 }
 
-- (void)evaluateScrollPosition {
+- (BOOL)evaluateScrollPosition {
+    BOOL result = NO;
     [self.scrollingView.layer removeAnimationForKey:scrollAnimationKey];
     
     CGRect scrollingFrame = [self.scrollingView.layer.presentationLayer frame];
     CGRect target = self.targetView.frame;
     
     NSLog(@"Frame X: %f", scrollingFrame.origin.x);
-    if (scrollingFrame.origin.x >= target.origin.x) {
+    if (scrollingFrame.origin.x >= target.origin.x && (scrollingFrame.origin.x + scrollingFrame.size.width) <= (target.origin.x + target.size.width)) {
+        result = YES;
         NSLog(@"Scored!");
     }
+    else {
+        result = NO;
+    }
     self.scrollingView.transform = CGAffineTransformMakeTranslation(-80.f, 0.0f);
+    return result;
+}
+
+- (void)updateScore:(NSInteger)score {
+    self.scoreLabel.text = [NSString stringWithFormat:@"%li", score];
 }
 
 @end
