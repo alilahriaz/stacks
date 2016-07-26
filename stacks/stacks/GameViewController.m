@@ -40,12 +40,14 @@
     [self.view updateScore:score];
 }
 
-//resize target on successive tap
+//resize target on multiples of 5 tap
 
-//label for score count
+//alter speed at multiples of 3
 
 //you lose label, end game state
 
 //restart game button and state
+
+//pause game state
 
 @end
