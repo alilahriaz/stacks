@@ -65,7 +65,7 @@ NSString *scrollAnimationKey = @"transform.translation.x";
     CGRect target = self.targetView.frame;
     
     NSLog(@"Frame X: %f", scrollingFrame.origin.x);
-    if (scrollingFrame.origin.x >= target.origin.x && (scrollingFrame.origin.x + scrollingFrame.size.width) <= (target.origin.x + target.size.width)) {
+    if ([self ifObject:scrollingFrame withinTargetBounds:target]) {
         result = YES;
         NSLog(@"Scored!");
     }
@@ -78,6 +78,10 @@ NSString *scrollAnimationKey = @"transform.translation.x";
 
 - (void)updateScore:(NSInteger)score {
     self.scoreLabel.text = [NSString stringWithFormat:@"%li", score];
+}
+
+- (BOOL)ifObject:(CGRect)scrollingFrame withinTargetBounds:(CGRect)target {
+    return (scrollingFrame.origin.x >= target.origin.x && (scrollingFrame.origin.x + scrollingFrame.size.width) <= (target.origin.x + target.size.width));
 }
 
 @end
