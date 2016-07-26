@@ -7,14 +7,15 @@
 //
 
 #import "GameView.h"
+#import "TargetFrameView.h"
 
 NSString *scrollAnimationKey = @"transform.translation.x";
 
 @interface GameView()
 
-@property (weak, nonatomic) IBOutlet UIView *targetView;
+@property (weak, nonatomic) IBOutlet TargetFrameView *targetView;
 @property (weak, nonatomic) IBOutlet UILabel *tapToBeginLabel;
-@property (weak, nonatomic) IBOutlet UIView *scrollingView;
+@property (weak, nonatomic) IBOutlet FrameBaseView *scrollingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollingViewLeading;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
@@ -68,10 +69,14 @@ NSString *scrollAnimationKey = @"transform.translation.x";
     if ([self ifObject:scrollingFrame withinTargetBounds:target]) {
         result = YES;
         NSLog(@"Scored!");
+        [self.scrollingView transformFrame];
+        [self.targetView transformFrame];
     }
     else {
+        [self.targetView backToOriginalFrame];
         result = NO;
     }
+    
     self.scrollingView.transform = CGAffineTransformMakeTranslation(-80.f, 0.0f);
     return result;
 }

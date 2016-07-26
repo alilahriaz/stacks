@@ -30,6 +30,9 @@
         if (scored) {
             self.score++;
         }
+        else {
+            self.score = 0;
+        }
         [self.view restartScroll];
     }
     self.tapsDetected ++;
