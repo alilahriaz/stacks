@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1E83B11D47071000DD56F4 /* FrameBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E83B01D47071000DD56F4 /* FrameBaseView.m */; };
+		0F1E83B41D47080500DD56F4 /* TargetFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E83B31D47080500DD56F4 /* TargetFrameView.m */; };
 		0FE76AAC1D3B00B000EB0AF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE76AAB1D3B00B000EB0AF4 /* main.m */; };
 		0FE76AAF1D3B00B000EB0AF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE76AAE1D3B00B000EB0AF4 /* AppDelegate.m */; };
 		0FE76AB51D3B00B000EB0AF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE76AB31D3B00B000EB0AF4 /* Main.storyboard */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1E83AF1D47071000DD56F4 /* FrameBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameBaseView.h; sourceTree = "<group>"; };
+		0F1E83B01D47071000DD56F4 /* FrameBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameBaseView.m; sourceTree = "<group>"; };
+		0F1E83B21D47080500DD56F4 /* TargetFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetFrameView.h; sourceTree = "<group>"; };
+		0F1E83B31D47080500DD56F4 /* TargetFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetFrameView.m; sourceTree = "<group>"; };
 		0FE76AA71D3B00B000EB0AF4 /* stacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE76AAB1D3B00B000EB0AF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FE76AAD1D3B00B000EB0AF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +102,10 @@
 			children = (
 				0FE76AC61D3B026E00EB0AF4 /* GameView.h */,
 				0FE76AC71D3B026E00EB0AF4 /* GameView.m */,
+				0F1E83AF1D47071000DD56F4 /* FrameBaseView.h */,
+				0F1E83B01D47071000DD56F4 /* FrameBaseView.m */,
+				0F1E83B21D47080500DD56F4 /* TargetFrameView.h */,
+				0F1E83B31D47080500DD56F4 /* TargetFrameView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 				0FE76AC51D3B023000EB0AF4 /* GameViewController.m in Sources */,
 				0FE76AC81D3B026E00EB0AF4 /* GameView.m in Sources */,
 				0FE76AAC1D3B00B000EB0AF4 /* main.m in Sources */,
+				0F1E83B11D47071000DD56F4 /* FrameBaseView.m in Sources */,
+				0F1E83B41D47080500DD56F4 /* TargetFrameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +334,7 @@
 				0FE76AC01D3B00B000EB0AF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

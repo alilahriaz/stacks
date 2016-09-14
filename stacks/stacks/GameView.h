@@ -14,5 +14,6 @@
 - (BOOL)evaluateScrollPosition;
 - (void)restartScroll;
 - (void)updateScore:(NSInteger)score;
+- (void)updateHighScore:(NSInteger)highscore;
 
 @end
