@@ -30,6 +30,8 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 
 @implementation GameView
 
+#pragma mark - NSObject
+
 - (void)awakeFromNib{
     [super awakeFromNib];
     
@@ -39,10 +41,7 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
     [self hideScoreLabel];
 }
 
-- (void)hideScoreLabel {
-    self.scoreLabel.text = 0;
-    self.scoreLabel.hidden = YES;
-}
+#pragma mark - Game animations
 
 - (void)restartScroll {
     [self startARound];
@@ -102,6 +101,8 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
     self.scrollingSpeed = defaultScrollingSpeed;
 }
 
+#pragma mark - Score Labels
+
 - (void)updateScore:(NSInteger)score {
     self.scoreLabel.text = [NSString stringWithFormat:@"%li", score];
 }
@@ -109,6 +110,12 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 - (void)updateHighScore:(NSInteger)highscore {
     self.highscoreLabel.text = [NSString stringWithFormat:@"%li", highscore];
 }
+
+- (void)hideScoreLabel {
+    self.scoreLabel.text = 0;
+}
+
+#pragma mark - Helpers
 
 - (BOOL)ifObject:(CGRect)scrollingFrame withinTargetBounds:(CGRect)target {
     return (scrollingFrame.origin.x >= target.origin.x && (scrollingFrame.origin.x + scrollingFrame.size.width) <= (target.origin.x + target.size.width));
