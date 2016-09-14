@@ -8,6 +8,9 @@
 
 #import "FrameBaseView.h"
 
+CGFloat resetFrameModifier = 0.95f;
+CGFloat frameModifier = 0.80f;
+
 @interface FrameBaseView ()
 
 @property (nonatomic, assign) CGRect originalFrame;
@@ -20,16 +23,18 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.modifier = 0.95f;
+    self.modifier = resetFrameModifier;
     self.originalFrame = self.frame;
 }
 
 - (void)backToOriginalFrame {
+    self.modifier = resetFrameModifier;
     self.transform = CGAffineTransformIdentity;
 }
 
 - (void)transformFrame {
-    self.modifier *= 0.8;
+    //should transform scrolling and target views, except when game is over
+    self.modifier *= resetFrameModifier;
     self.transform = CGAffineTransformMakeScale(self.modifier, self.modifier);
 }
 
