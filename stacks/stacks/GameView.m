@@ -24,6 +24,7 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollingViewLeading;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic , assign) CGFloat scrollingSpeed;
+@property (weak, nonatomic) IBOutlet UILabel *highscoreLabel;
 
 @end
 
@@ -103,6 +104,10 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 
 - (void)updateScore:(NSInteger)score {
     self.scoreLabel.text = [NSString stringWithFormat:@"%li", score];
+}
+
+- (void)updateHighScore:(NSInteger)highscore {
+    self.highscoreLabel.text = [NSString stringWithFormat:@"%li", highscore];
 }
 
 - (BOOL)ifObject:(CGRect)scrollingFrame withinTargetBounds:(CGRect)target {
