@@ -66,7 +66,7 @@
 
 - (void)setHighScore:(NSInteger)highScore {
     _highScore = highScore;
-    [[GameManager sharedInstance] storeHighScore:highScore];
+    [GameManager sharedInstance].highScore = highScore;
     [self.view updateHighScore:highScore];
 }
 

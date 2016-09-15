@@ -28,9 +28,24 @@
 - (id)init {
     if (self = [super init]) {
         self.currentScore = 0;
-        self.highScore = [[NSUserDefaults standardUserDefaults] integerForKey:HighScoreIdentifier];
+        self.highScore = [self getPreviousHighScore];
     }
     return self;
+}
+
+#pragma mark - Setters
+
+- (void)setCurrentScore:(NSInteger)currentScore {
+    _currentScore = currentScore;
+    
+    if (currentScore > self.highScore) {
+        self.highScore = currentScore;
+    }
+}
+
+- (void)setHighScore:(NSInteger)highScore {
+    _highScore = highScore;
+    [self storeHighScore:highScore];
 }
 
 #pragma mark - UserDefaults
@@ -39,6 +54,10 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setInteger:score forKey:HighScoreIdentifier];
     [userDefaults synchronize];
+}
+
+- (NSInteger)getPreviousHighScore {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:HighScoreIdentifier];
 }
 
 @end
