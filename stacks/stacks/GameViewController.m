@@ -7,8 +7,8 @@
 //
 
 #import "GameViewController.h"
-
-NSString *highScoreIdentifier = @"highscore";
+#import "Constants.h"
+#import "GameManager.h"
 
 @interface GameViewController ()
 
@@ -27,7 +27,7 @@ NSString *highScoreIdentifier = @"highscore";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.highScore = [self retrievePreviousHighScore];
+    self.highScore = [GameManager sharedInstance].highScore;
 }
 
 #pragma mark - Logic
@@ -66,22 +66,10 @@ NSString *highScoreIdentifier = @"highscore";
 
 - (void)setHighScore:(NSInteger)highScore {
     _highScore = highScore;
-    [self storeHighScore:highScore];
+    [[GameManager sharedInstance] storeHighScore:highScore];
     [self.view updateHighScore:highScore];
 }
 
-#pragma mark - UserDefaults
-
-- (void)storeHighScore:(NSInteger)score {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setInteger:score forKey:highScoreIdentifier];
-    [userDefaults synchronize];
-}
-
-- (NSInteger)retrievePreviousHighScore {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults integerForKey:highScoreIdentifier];
-}
 
 //Gameplay
 //resize target on multiples of 5 tap
