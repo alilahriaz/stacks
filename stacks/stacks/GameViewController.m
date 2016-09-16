@@ -61,6 +61,7 @@
 
 - (void)setScore:(NSInteger)score {
     _score = score;
+    [GameManager sharedInstance].currentScore = score;
     [self.view updateScore:score];
 }
 
@@ -71,22 +72,6 @@
 }
 
 
-//Gameplay
-//resize target on multiples of 5 tap
-
-//alter speed at multiples of 3
-
-
 //Operation
 //you lose label, end game state
-
-//restart game button and state
-
-//pause game state
-
-//Competitive
-//store high scores in nsuserdefaults
-
-//save name of player
-
 @end

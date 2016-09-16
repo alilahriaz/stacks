@@ -9,3 +9,5 @@
 #import "Constants.h"
 
 NSString * const HighScoreIdentifier = @"highscore";
+NSString * const ScoredNotification = @"scored";
+NSString * const NewGameNotification = @"new game";

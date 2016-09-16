@@ -6,8 +6,16 @@
 //  Copyright © 2016 Ali Riaz. All rights reserved.
 //
 
+#define SpeedMultiplierFactor 3
+
 #import "GameManager.h"
 #import "Constants.h"
+
+@interface GameManager ()
+
+@property (nonatomic, readwrite) NSInteger gameSpeed;
+
+@end
 
 @implementation GameManager
 
@@ -28,6 +36,7 @@
 - (id)init {
     if (self = [super init]) {
         self.currentScore = 0;
+        self.gameSpeed = 1;
         self.highScore = [self getPreviousHighScore];
     }
     return self;
@@ -37,6 +46,14 @@
 
 - (void)setCurrentScore:(NSInteger)currentScore {
     _currentScore = currentScore;
+    
+    if (currentScore == 0) {
+        self.gameSpeed = 1;
+    }
+    
+    if (currentScore && (currentScore % SpeedMultiplierFactor == 0)) {
+        self.gameSpeed ++;
+    }
     
     if (currentScore > self.highScore) {
         self.highScore = currentScore;

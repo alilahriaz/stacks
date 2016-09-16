@@ -10,6 +10,8 @@
 
 @interface FrameBaseView : UIView
 
+@property (nonatomic, assign) NSInteger score;
+
 - (void)backToOriginalFrame;
 - (void)transformFrame;
 

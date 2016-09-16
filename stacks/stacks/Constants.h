@@ -9,3 +9,5 @@
 #import <Foundation/Foundation.h>
 
 extern NSString * const HighScoreIdentifier;
+extern NSString * const ScoredNotification;
+extern NSString * const NewGameNotification;
