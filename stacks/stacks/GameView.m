@@ -8,6 +8,9 @@
 
 #import "GameView.h"
 #import "TargetFrameView.h"
+#import "ScrollingFrameView.h"
+#import "Constants.h"
+#import "GameManager.h"
 
 NSString *scrollAnimationKey = @"transform.translation.x";
 CGFloat targetViewCornerRaduis = 4.0f;
@@ -20,7 +23,7 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 
 @property (weak, nonatomic) IBOutlet TargetFrameView *targetView;
 @property (weak, nonatomic) IBOutlet UILabel *tapToBeginLabel;
-@property (weak, nonatomic) IBOutlet FrameBaseView *scrollingView;
+@property (weak, nonatomic) IBOutlet ScrollingFrameView *scrollingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollingViewLeading;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic , assign) CGFloat scrollingSpeed;
@@ -90,9 +93,7 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 
 - (void)upGameSpeed {
     NSLog(@"Scored!");
-    [self.scrollingView transformFrame];
-    [self.targetView transformFrame];
-    self.scrollingSpeed *= scrollingAnimationDurationModifier;
+    self.scrollingSpeed = defaultScrollingSpeed / [GameManager sharedInstance].gameSpeed;
 }
 
 - (void)restartGame {
@@ -105,6 +106,8 @@ CGFloat scrollingViewDefaultPosition = -80.0f;
 
 - (void)updateScore:(NSInteger)score {
     self.scoreLabel.text = [NSString stringWithFormat:@"%li", score];
+    self.targetView.score = score;
+    self.scrollingView.score = score;
 }
 
 - (void)updateHighScore:(NSInteger)highscore {

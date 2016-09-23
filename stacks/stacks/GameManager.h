@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign) NSInteger currentScore;
 @property (nonatomic, assign) NSInteger highScore;
+@property (nonatomic, readonly) NSInteger gameSpeed;
 
 + (GameManager *)sharedInstance;
 - (void)storeHighScore:(NSInteger)score;

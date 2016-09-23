@@ -11,6 +11,7 @@
 		0F1E83B41D47080500DD56F4 /* TargetFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E83B31D47080500DD56F4 /* TargetFrameView.m */; };
 		0F8D0B611D8B16E8008BCE40 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D0B601D8B16E8008BCE40 /* GameManager.m */; };
 		0F8D0B691D8B1D84008BCE40 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D0B681D8B1D84008BCE40 /* Constants.m */; };
+		0F8D0B6C1D8B49B2008BCE40 /* ScrollingFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D0B6B1D8B49B2008BCE40 /* ScrollingFrameView.m */; };
 		0FE76AAC1D3B00B000EB0AF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE76AAB1D3B00B000EB0AF4 /* main.m */; };
 		0FE76AAF1D3B00B000EB0AF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE76AAE1D3B00B000EB0AF4 /* AppDelegate.m */; };
 		0FE76AB51D3B00B000EB0AF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE76AB31D3B00B000EB0AF4 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 		0F8D0B601D8B16E8008BCE40 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		0F8D0B671D8B1D84008BCE40 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0F8D0B681D8B1D84008BCE40 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		0F8D0B6A1D8B49B2008BCE40 /* ScrollingFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingFrameView.h; sourceTree = "<group>"; };
+		0F8D0B6B1D8B49B2008BCE40 /* ScrollingFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingFrameView.m; sourceTree = "<group>"; };
 		0FE76AA71D3B00B000EB0AF4 /* stacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE76AAB1D3B00B000EB0AF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FE76AAD1D3B00B000EB0AF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				0F1E83B01D47071000DD56F4 /* FrameBaseView.m */,
 				0F1E83B21D47080500DD56F4 /* TargetFrameView.h */,
 				0F1E83B31D47080500DD56F4 /* TargetFrameView.m */,
+				0F8D0B6A1D8B49B2008BCE40 /* ScrollingFrameView.h */,
+				0F8D0B6B1D8B49B2008BCE40 /* ScrollingFrameView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				TargetAttributes = {
 					0FE76AA61D3B00B000EB0AF4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S4ZG4KW9X5;
 					};
 				};
 			};
@@ -206,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8D0B6C1D8B49B2008BCE40 /* ScrollingFrameView.m in Sources */,
 				0FE76AAF1D3B00B000EB0AF4 /* AppDelegate.m in Sources */,
 				0FE76AC51D3B023000EB0AF4 /* GameViewController.m in Sources */,
 				0FE76AC81D3B026E00EB0AF4 /* GameView.m in Sources */,
@@ -325,10 +332,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = stacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ariaz.stacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -336,10 +346,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = stacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ariaz.stacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
